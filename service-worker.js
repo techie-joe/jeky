@@ -1,4 +1,4 @@
-const BUILD_VERSION = "B2026001";
+const BUILD_VERSION = "B2026002";
 const CACHE_NAME = `jeky-${BUILD_VERSION}`;
 const BUILD_METADATA_URL = new URL("./__meta__/build-version", self.registration.scope);
 const APP_FILES = [

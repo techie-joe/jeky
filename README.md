@@ -1,9 +1,11 @@
 # Jeky
-Vide coding with Copilot
+Small PWA template built with Copilot.
 
-### Changes
-- BUILD_VERSION = B2026002
-- Add Overview and Assesment. 
+### New Changes
+- Two reported cache-isolation flaws are fixed.
 
-### Next
-- Update build version from B2026 to B26
+### Previous Changes
+- First initialization.
+
+### Next Changes
+- (none)

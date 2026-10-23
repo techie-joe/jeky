@@ -1,5 +1,6 @@
-const BUILD_VERSION = "B2026002";
-const CACHE_NAME = `jeky-${BUILD_VERSION}`;
+const BUILD_VERSION = "B26003";
+const CACHE_PREFIX = "jeky-"; 
+const CACHE_NAME = `${CACHE_PREFIX}${BUILD_VERSION}`;
 const BUILD_METADATA_URL = new URL("./__meta__/build-version", self.registration.scope);
 const APP_FILES = [
   "./",
@@ -31,7 +32,7 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((keys) =>
       Promise.all(
         keys
-          .filter((key) => key !== CACHE_NAME)
+          .filter((key) => key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME)
           .map((key) => caches.delete(key))
       )
     ),
@@ -45,15 +46,17 @@ self.addEventListener("fetch", (event) => {
   }
 
   event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+    caches.open(CACHE_NAME).then((cache) =>
+      cache.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) return cachedResponse;
 
-      return fetch(event.request).catch(() => {
-        if (event.request.mode === "navigate") {
-          return caches.match("./index.html");
-        }
-        return Response.error();
-      });
-    })
+        return fetch(event.request).catch(() => {
+          if (event.request.mode === "navigate") {
+            return cache.match("./index.html");
+          }
+          return Response.error();
+        });
+      })
+    )
   );
 });

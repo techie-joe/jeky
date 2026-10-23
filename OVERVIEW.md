@@ -6,10 +6,6 @@ Jeky is a small, installable progressive web app built with plain HTML, CSS, and
 
 This document serves as the structural source of truth for the project. It outlines the overall system design, details every file and directory in the codebase along with its specific purpose and design rationale, maps out core functions and modules, and defines the relationships and data flow between them.
 
-## Target Audience
-
-Developers, maintainers, and AI collaborators working on the project.
-
 ## Directory Structure
 
 - `.gitattributes` — enables automatic text-file line-ending normalization for consistent repository handling.

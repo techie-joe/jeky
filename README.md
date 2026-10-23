@@ -1,5 +1,5 @@
 # Jeky
-Small PWA template built with Copilot.
+Small PWA Template built with Copilot.
 
 ### New Changes
 - Two reported cache-isolation flaws are fixed.

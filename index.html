@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeky</title>
+  <meta name="theme-color" content="#1f2937">
+  <meta name="description" content="A simple Jeky app.">
+  <meta name="build-version" content="B2026001">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
+  <link id="main-theme" rel="stylesheet" href="assets/themes/style.css">
+  <link id="dark-theme" rel="stylesheet" href="assets/themes/dark-style.css" disabled>
+  <script src="assets/scripts/main.js" defer></script>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <button id="settings-button" class="settings-button" type="button" aria-label="Open settings" aria-haspopup="dialog" aria-controls="settings-dialog">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.08-.03a1.7 1.7 0 0 0-1.82.34l-.07.06h-3.4l-.02-.09a1.7 1.7 0 0 0-1.18-1.38l-.09-.03-2.4 1.39-.06-.06a1.7 1.7 0 0 0-1.88-.34l-.08.03-1.7-2.94.06-.06A1.7 1.7 0 0 0 5.7 15l-.03-.09v-3.4l.09-.02a1.7 1.7 0 0 0 1.38-1.18l.03-.09-1.39-2.4.06-.06a1.7 1.7 0 0 0 .34-1.88l-.03-.08 2.94-1.7.06.06a1.7 1.7 0 0 0 1.88.34l.09-.03h3.4l.02.09a1.7 1.7 0 0 0 1.18 1.38l.09.03 2.4-1.39.06.06a1.7 1.7 0 0 0 1.88.34l.08-.03 1.7 2.94-.06.06A1.7 1.7 0 0 0 21.3 10l.03.09v3.4l-.09.02a1.7 1.7 0 0 0-1.38 1.18l-.03.09z"></path>
+      </svg>
+    </button>
+  </nav>
+  <main>
+    <h1>Jeky</h1>
+  </main>
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <div class="settings-header">
+      <h2 id="settings-title">Settings</h2>
+      <button id="settings-close" class="settings-close" type="button" aria-label="Close settings">&times;</button>
+    </div>
+    <div class="settings-options">
+      <label for="theme-select">Theme</label>
+      <select id="theme-select">
+        <option value="system">System default</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <button id="install-button" type="button" hidden>Install app</button>
+    </div>
+    <small id="build-version" class="build-version"></small>
+  </dialog>
+</body>
+</html>

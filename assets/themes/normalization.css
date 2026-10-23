@@ -1,0 +1,54 @@
+/* Normalize browser defaults for consistent styling. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}

@@ -6,7 +6,7 @@
   <title>Jeky</title>
   <meta name="theme-color" content="#1f2937">
   <meta name="description" content="A simple Jeky app.">
-  <meta name="build-version" content="B26003">
+  <meta name="build-version" content="B26007">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/images/icon.svg" type="image/svg+xml">
   <link id="main-theme" rel="stylesheet" href="assets/themes/style.css">
@@ -14,22 +14,64 @@
   <script src="assets/scripts/main.js" defer></script>
 </head>
 <body>
-  <nav aria-label="Main navigation">
-    <button id="settings-button" class="settings-button" type="button" aria-label="Open settings" aria-haspopup="dialog" aria-controls="settings-dialog">
-      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="3"></circle>
-        <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-1.7 2.94-.08-.03a1.7 1.7 0 0 0-1.82.34l-.07.06h-3.4l-.02-.09a1.7 1.7 0 0 0-1.18-1.38l-.09-.03-2.4 1.39-.06-.06a1.7 1.7 0 0 0-1.88-.34l-.08.03-1.7-2.94.06-.06A1.7 1.7 0 0 0 5.7 15l-.03-.09v-3.4l.09-.02a1.7 1.7 0 0 0 1.38-1.18l.03-.09-1.39-2.4.06-.06a1.7 1.7 0 0 0 .34-1.88l-.03-.08 2.94-1.7.06.06a1.7 1.7 0 0 0 1.88.34l.09-.03h3.4l.02.09a1.7 1.7 0 0 0 1.18 1.38l.09.03 2.4-1.39.06.06a1.7 1.7 0 0 0 1.88.34l.08-.03 1.7 2.94-.06.06A1.7 1.7 0 0 0 21.3 10l.03.09v3.4l-.09.02a1.7 1.7 0 0 0-1.38 1.18l-.03.09z"></path>
+  <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+    <button id="menu-button" class="menu-button iconic-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    <div id="main-menu" class="main-menu" aria-hidden="true" inert>
+      <div class="menu-header">
+        <span class="menu-title">Menu</span>
+        <button id="menu-close" class="menu-close iconic-button" type="button" aria-label="Close navigation menu">&times;</button>
+      </div>
+      <ul class="menu-items">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <nav id="right-navigation" class="right-nav" aria-label="Right navigation">
+    <button id="settings-button" class="settings-button iconic-button" type="button" aria-label="Open settings" aria-haspopup="dialog" aria-controls="settings-dialog">
+      <svg id="dots-svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+        <title>dots-vertical</title><path d="M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z" />
       </svg>
     </button>
   </nav>
-  <main>
+  <div class="lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <main id="home" class="page home-page">
     <h1>Jeky</h1>
     <p>Small PWA Template</p>
   </main>
+  <div id="about" class="page about-page" hidden aria-labelledby="about-title">
+    <h1 id="about-title">About Jeky</h1>
+    <p>Jeky is a small Progressive Web App template for building a simple, installable web experience.</p>
+  </div>
+  <div id="services" class="page services-page" hidden aria-labelledby="services-title">
+    <h1 id="services-title">Services</h1>
+    <p>Jeky provides a lightweight starting point for creating an installable web app, with responsive layouts and theme settings.</p>
+  </div>
+  <div id="contact" class="page contact-page" hidden aria-labelledby="contact-title">
+    <h1 id="contact-title">Contact</h1>
+    <p>Have a question or suggestion about Jeky? We would love to hear from you.</p>
+  </div>
   <dialog id="settings-dialog" aria-labelledby="settings-title">
     <div class="settings-header">
       <h2 id="settings-title">Settings</h2>
-      <button id="settings-close" class="settings-close" type="button" aria-label="Close settings">&times;</button>
+      <button id="settings-close" class="settings-close iconic-button" type="button" aria-label="Close settings">&times;</button>
     </div>
     <div class="settings-options">
       <label for="theme-select">Theme</label>

@@ -9,6 +9,16 @@ button {
   color: #111827;
 }
 
+.main-menu {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.menu-items a:hover,
+.menu-items a:focus-visible {
+  background: rgb(249 250 251 / 12%);
+}
+
 dialog {
   background: #111827;
   color: #f9fafb;

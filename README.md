@@ -1,7 +1,10 @@
 # Jeky
 Small PWA Template built with Copilot.
 
-### New Changes - B26009
+### New Changes - B26010
+- Fix mobile scrolling issue.
+
+###### B26009
 - Fix menu position and width.
 - Add randomizeLines.
 

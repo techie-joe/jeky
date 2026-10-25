@@ -1,6 +1,6 @@
-const BUILD_VERSION = "B26008";
-const CACHE_PREFIX = "jeky-"; 
-const CACHE_NAME = `${CACHE_PREFIX}${BUILD_VERSION}`;
+const BUILD_VERSION = "B26009";
+const CACHE_PREFIX = "jeky-";
+const CACHE_NAME = CACHE_PREFIX + BUILD_VERSION;
 const BUILD_METADATA_URL = new URL("./__meta__/build-version", self.registration.scope);
 const APP_FILES = [
   "./",

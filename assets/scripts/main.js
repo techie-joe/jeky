@@ -123,3 +123,18 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+
+(function randomizeLines() {
+  const style = document.getElementById("randomizeLines");
+
+  if (!(style instanceof HTMLStyleElement)) {
+    console.error('Could not find <style id="randomizeLines">.');
+    return;
+  }
+
+  style.textContent = Array.from({ length: 10 }, (_, index) => {
+    const delay = (Math.random() * 7.5 + 0.5).toFixed(2);
+    return `.line:nth-child(${index + 1})::after { animation-delay: ${delay}s; }`;
+  }).join("\n");
+
+})();

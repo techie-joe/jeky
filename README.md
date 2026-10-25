@@ -2,7 +2,7 @@
 Small PWA Template built with Copilot.
 
 ### New Changes - B26009
-- Fix menu position.
+- Fix menu position and width.
 - Add randomizeLines.
 
 ###### B26008

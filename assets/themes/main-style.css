@@ -227,15 +227,18 @@ dialog::backdrop {
 }
 
 .lines {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: 100%;
+  height: 100vh;
+  height: 100dvh;
   margin: auto;
   width: 90vw;
   display: flex;
   justify-content: space-between; /* Distribute lines evenly */
+  z-index: -1; /* send to back */
+  pointer-events: none; /* Allows clicking through the lines to the content below */
 }
 
 .line {

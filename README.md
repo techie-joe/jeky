@@ -19,4 +19,4 @@ Small PWA Template built with Copilot.
 - Two reported cache-isolation flaws are fixed.
 
 ### Pending Changes
-- (none)
+- To add js and css bundler / packer.

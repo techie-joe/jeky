@@ -5,13 +5,12 @@
 body {
   display: grid;
   place-items: center;
-  padding: 0 1.5rem;
+  padding: 0;
   background: #f3f4f6;
   color: #1f2937;
   font-family: system-ui, sans-serif;
   text-align: center;
   height: 100%;
-  min-height: 100%;
   overflow: auto;
   overscroll-behavior-y: none; /* Prevents rubber-banding on short content */
 }
@@ -140,6 +139,10 @@ main {
   gap: 1rem;
   max-width: 42rem;
   justify-items: center;
+}
+
+.page {
+  padding: 1.5rem; 
 }
 
 .page[hidden] {

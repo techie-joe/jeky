@@ -10,15 +10,16 @@ This document is the structural source of truth for the project. It describes th
 
 - `.gitattributes` — configures automatic text-file line-ending normalization.
 - `.github/` — GitHub-specific project configuration.
-- `.github/instructions/` — Copilot instruction files for project documentation and version updates.
+- `.github/instructions/` — Copilot instruction files for assessment updates, project documentation, and version updates.
+- `.github/instructions/assessment.instructions.md` — guidance for adding new assessments at the top of the `New Assessments` list.
 - `.github/instructions/overview.instructions.md` — guidance for keeping this structural overview accurate and implementation-verified.
 - `.github/instructions/update-version.instructions.md` — guidance for synchronizing the displayed build version and service-worker version.
-- `ASSESMENT.md` — records project assessments and past security review notes.
+- `ASSESSMENT.md` — records project assessments and past security review notes.
 - `assets/` — static application assets.
 - `assets/images/` — app image assets.
 - `assets/images/icon.svg` — SVG app and browser icon.
 - `assets/scripts/` — application JavaScript.
-- `assets/scripts/main.js` — hash-based page display, main-menu controls, settings dialog, theme selection and persistence, system preference handling, install prompt, build-version display, and service-worker registration.
+- `assets/scripts/main.js` — hash-based page display, main-menu controls, settings dialog, theme selection and persistence, system preference handling, install prompt, build-version display, randomized delays for the animated background lines, and service-worker registration.
 - `assets/themes/` — application stylesheets.
 - `assets/themes/dark-style.css` — dark-theme overrides enabled by the theme controller.
 - `assets/themes/main-style.css` — layout and light-theme styles for navigation, pages, settings, and animated background lines.
@@ -38,7 +39,7 @@ This document is the structural source of truth for the project. It describes th
 - **Settings and themes — `index.html` and `assets/scripts/main.js`:** The settings button opens a modal dialog. `loadTheme()` validates the saved choice, resolves the system preference when needed, and applies the theme by toggling the dark stylesheet and document theme. Theme changes persist to `localStorage`; a system-preference listener updates the effective theme when system mode is selected.
 - **PWA installation — `index.html` and `assets/scripts/main.js`:** The install button is shown after `beforeinstallprompt`, invokes the saved install prompt when clicked, and is hidden after the prompt or app installation.
 - **Offline app shell — `service-worker.js`:** The `install` handler precaches app files and build metadata. The `activate` handler deletes older caches with the `jeky-` prefix and claims clients. The `fetch` handler handles same-origin GET requests from cache when possible, otherwise uses the network; failed navigation requests fall back to cached `index.html`, and other failed requests return an error response.
-- **Styles and theme — `assets/themes/`:** `style.css` imports normalization and main styles. `dark-style.css` supplies dark-theme overrides and is enabled by the theme controller. The main stylesheet also styles the animated background lines and respects reduced motion for the sliding menu.
+- **Styles and theme — `assets/themes/` and `assets/scripts/main.js`:** `style.css` imports normalization and main styles. `dark-style.css` supplies dark-theme overrides and is enabled by the theme controller. The main stylesheet defines the animated background lines and their drop animation; `main.js` randomizes their animation delays on page load. Styles also respect reduced motion for the sliding menu.
 - **PWA metadata and icon — `manifest.webmanifest` and `assets/images/icon.svg`:** The manifest configures app identity, launch behavior, display mode, colors, and the SVG icon used for installation.
 - **Build version:** `index.html` provides the version shown in settings. Keep it in sync with the `BUILD_VERSION` constant in `service-worker.js`, which names the cache and stores it as build metadata.
 
